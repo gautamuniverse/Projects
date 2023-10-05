@@ -1,5 +1,3 @@
-
-
 document.getElementById("app").innerHTML = ``;
 
 //Don't allow window resizable below 500px width
@@ -64,6 +62,9 @@ equals[0].addEventListener("click", function () {
   var trimmedString = removeSpacesBetweenCharacters(
     screen[0].querySelector("p").textContent
   );
-
-  screen[0].querySelector("p").textContent = eval(trimmedString);
+  try {
+    screen[0].querySelector("p").textContent = eval(trimmedString);
+  } catch (error) {
+    screen[0].querySelector("p").textContent = "Error";
+  }
 });

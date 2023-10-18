@@ -14,6 +14,7 @@ button.addEventListener("click", function () {
 });
 
 function startCounter() {
+
   clearInterval(interval);
   let counterValue = 1;
   for (let i = 0; i < current.length; i++) {

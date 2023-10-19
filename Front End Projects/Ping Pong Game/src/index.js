@@ -50,8 +50,8 @@ const windowWidth = window.innerWidth - ball.clientWidth;
 const windowHeight =
   window.innerHeight - ball.clientHeight - rod1.clientHeight + 5;
 
-x = 100; // Initial horizontal position
-y = window.innerHeight-ball.offsetHeight-rod1.offsetHeight-5; //Initial vertical position
+let x = 100; // Initial horizontal position
+let y = window.innerHeight-ball.offsetHeight-rod1.offsetHeight-5; //Initial vertical position
 let dx = 2; // Horizontal speed
 let dy = -2; // Vertical speed
 localStorage.setItem('p1', '0'); //Player 1 score

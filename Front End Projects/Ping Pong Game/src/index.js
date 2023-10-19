@@ -57,6 +57,7 @@ let dy = -2; // Vertical speed
 localStorage.setItem('p1', '0'); //Player 1 score
 localStorage.setItem('p2', '0'); //Player 2 score
 localStorage.setItem('maxscore', '0'); //Max Score
+localStorage.setItem('maxWinner', 'Player 1'); //Max Score Player
 let p1Won = true;
 let animationStarted = false;
 
@@ -87,6 +88,11 @@ function moveBall() {
     let newScoreP2 = parseInt(localStorage.getItem('p2'))+1;
     localStorage.setItem('p2', newScoreP2.toString());
     let maxScore = parseInt(localStorage.getItem('maxscore'));
+    //Current Max Score is of Player 2
+    if(newScoreP2 > maxScore)
+    {
+        localStorage.setItem('maxWinner', 'Player 2');
+    }
     maxScore = Math.max(maxScore, Math.ceil(newScoreP2/3));
     localStorage.setItem('maxscore', maxScore.toString());
     }
@@ -96,6 +102,11 @@ function moveBall() {
         let newScoreP1 = parseInt(localStorage.getItem('p1'))+1;
         localStorage.setItem('p1', newScoreP1.toString());
         let maxScore = parseInt(localStorage.getItem('maxscore'));
+        //Current Max Score is of Player 1
+    if(newScoreP1 > maxScore)
+    {
+        localStorage.setItem('maxWinner', 'Player 1');
+    }
     maxScore = Math.max(maxScore, Math.ceil(newScoreP1/3));
     localStorage.setItem('maxscore', maxScore.toString());
     }
@@ -108,10 +119,10 @@ function moveBall() {
     if(currentScoreP1  === 0 && currentScoreP2 === 0)
     {
         
-        alert("Game Over, Max Score: "+maximum);
+        alert("Game Over. "+ localStorage.getItem('maxWinner')+" has maximum score of "+ maximum);
     }
     else{
-        alert("Player 2 won with score: "+" "+Math.ceil(currentScoreP2/3) +". Max Score: "+maximum);
+        alert("Player 2 won with score:"+" "+Math.ceil(currentScoreP2/3) +". "+ localStorage.getItem('maxWinner')+" has maximum score of "+ maximum);
         p1Won = false;
     }
     
@@ -127,11 +138,10 @@ function moveBall() {
     //No Player scores, end the game
     if(currentScoreP1  === 0 && currentScoreP2 === 0)
     {  
-        alert("Game Over, Max Score: "+maximum);
+        alert("Game Over, Max Score: "+" Current Max Score is of "+ localStorage.getItem('maxWinner')+": "+ maximum);
     }
     else
-    alert("Player 1 won with score: "+" "+Math.ceil(currentScoreP1/3)+". Max Score: "+maximum);
-
+    alert("Player 1 won with score:"+" "+Math.ceil(currentScoreP1/3) +". "+ localStorage.getItem('maxWinner')+" has maximum score of "+ maximum);
     gameOver();
   }
    function gameOver() { 

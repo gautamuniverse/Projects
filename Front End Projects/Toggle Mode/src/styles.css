@@ -1,0 +1,59 @@
+body {
+  font-family: sans-serif;
+  transition: background-color 1s ease-in-out;
+}
+
+#app {
+  display: flex;
+  margin-top: 10%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#triggerParent {
+  width: 100%;
+  display: flex;
+  margin-top: 10%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#trigger {
+  width: 100px;
+  height: 30px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  background-color: white;
+}
+#triggerButton {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 3rem;
+  background-color: black;
+  transition: transform 1s ease-in-out;
+}
+
+#triggerButton.active {
+  transform: translateX(210%);
+}
+
+#triggerText {
+  margin-top: 2rem;
+  font-size: 200%;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+
+#triggerText.white {
+  color: white;
+}
+
+body.bgColor {
+  background-color: black;
+}

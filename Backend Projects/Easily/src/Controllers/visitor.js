@@ -24,7 +24,7 @@ export default class Visitor {
     const job = Jobs.getById(getJobId);
     // Check if the job is found
     if (job) {
-      res.render("jobDetails", {
+      res.render("jobdetails", {
         job: job,
         email: req.session.email,
         name: req.session.name,
@@ -116,7 +116,7 @@ export default class Visitor {
   }
 
   searchJobs(req, res, next){
-    console.log(req.query.search); //the search type form with get method sends data to the req.query 
+    // console.log(req.query.search); //the search type form with get method sends data to the req.query 
     const searched = req.query.search.trim().toLowerCase();
     const jobsFound = Jobs.searchJob(searched);
     if(jobsFound){

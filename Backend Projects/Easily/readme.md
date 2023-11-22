@@ -63,6 +63,9 @@ Below steps have been followed to set up and build the project:
 8. Implement middleware for resume uploads, confirmation emails, and tracking visits.
 9. Ensure the code is well-documented for easy understanding of functionalities and organization.
 
+## Live Website
+- https://easily-job-portal.onrender.com/
+
 ## Author
 
 - **Gautam**
